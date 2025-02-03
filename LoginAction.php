@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmr -> $conn -> prepare("SELECT id, userid, name, email, password FROM users WHERE email = ?");
+    $stmt -> $conn -> prepare("SELECT id, userid, name, email, password FROM users WHERE email = ?");
     $stmt -> bind_param("s", $email);
     $stmt -> execute();
     $result -> stmt -> get_result();
@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     }
 
     $stmt -> close();
-    $conn -> close();
+    $conn -> close()
 
 }
 
